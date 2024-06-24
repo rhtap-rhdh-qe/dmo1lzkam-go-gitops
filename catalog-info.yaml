@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dmo1lzkam-go-gitops
+  description: This is GitOps manifest for dmo1lzkam-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: dmo1lzkam-go
+    janus-idp.io/tekton: dmo1lzkam-go 
+    backstage.io/kubernetes-id: dmo1lzkam-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dmo1lzkam-go
